@@ -55,7 +55,7 @@ $(document).ready(function() {
             }
           });
           
-          console.log(window.countries);
+
           
           mynewinterval = setInterval(function() {
             console.log('my new interval');
