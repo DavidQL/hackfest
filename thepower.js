@@ -63,8 +63,8 @@ $(document).ready(function() {
               
               clearInterval(mynewinterval);
               
-              $('.results').append($('<p> Found ' + window.tweet_list.length + ' tweets. </p>'));
-              $('.results').append($('<p> Only ' + window.geo_tweets + ' had a geolocation. </p>'));
+              $('.results').append($('<p> Found ' + window.tweet_list.length + ' tweets with that search term. (API maxes out at 900)</p>'));
+              $('.results').append($('<p> Only ' + window.geo_tweets + ' of those had a geolocation. </p>'));
               
               setTimeout(function() {
                 _.each(window.countries, function(val, key){
