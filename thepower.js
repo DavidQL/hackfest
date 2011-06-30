@@ -63,12 +63,21 @@ $(document).ready(function() {
               
               clearInterval(mynewinterval);
               
-              $('.results').append($('<p> Found ' + window.tweet_list.length + ' tweets with that search term. (API maxes out at 900)</p>'));
-              $('.results').append($('<p> Only ' + window.geo_tweets + ' of those had a geolocation. </p>'));
+              
               
               setTimeout(function() {
+                $('.results').append($('<p> Found ' + window.tweet_list.length + ' tweets with that search term. (API max is 900)</p>'));
+                $('.results').append($('<p> Only ' + window.geo_tweets + ' of those had a geolocation. </p>'));
+                
+                
                 _.each(window.countries, function(val, key){
-                  $('.results').append($('<p>' + val + ' tweets from ' + key + '</p>'));
+                  if (val === 1 || val === "1") {
+                    $('.results').append($('<p>' + val + ' was from ' + key + '.</p>'));
+                  }
+                  else {
+                    $('.results').append($('<p>' + val + ' were from ' + key + '.</p>'));
+                  }
+                  
                   console.log(val + " tweets from " + key);
                 });
                 $('.blocker').hide(200);
